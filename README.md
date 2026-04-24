@@ -1,13 +1,13 @@
 # Hyphae_Rhizo_microboiome
 Microbiome analysis for fungal hyphaea and rhizosphere of different vegetables
 The fungal hyphae samples and rhizosphere samples from bitter melons, peppers, eggplants, and cucumbers were collected from Yuanmou and Huanian. Shotgun metagenome sequencing was performed to analyze the fungal hypae microbiome and rhizosphere microbiome from nematode-infected and healthy plants.
-# Workflow for metagenome analysis
+# Workflow for metagenomic data
 1. Quality control
    Paired-end raw reads were processed by fastp (v0.23.4) and bowtie2 (v2.5.4) to remove low-quality and host genome contaminations.
 2. Contig Assembly
    Megahit (v1.1.3) was used to assemble the clean reads into contigs.
 3. Taxonomy analysis based on reads
-   Paired-end clean reads were taxonomy classified using Metaphlan4 (database version 202503)
+   Paired-end clean reads were taxonomy classified using Metaphlan4 (v4.0.6, database version 202503).
 4. Metagenomic binning
    Assembled contigs with lengths over 1000 bp were binned into draft genomes using metabat2, concoct in metaWRAP (v1.3.2)，and bin_refinement module was applied to refine the bins from metabat2 and concoct.
 5. Reference microbial genome catalog construction
